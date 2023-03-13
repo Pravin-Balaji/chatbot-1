@@ -33,10 +33,7 @@ app = Flask(__name__)
 CORS(app)
 @app.route("/<abc>")
 def index(abc):
-    # sentence = "do you use credit cards?"
     sentence = abc
-    # if sentence == "quit":
-    #     break
 
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
