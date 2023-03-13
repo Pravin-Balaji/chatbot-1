@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 
 
 function App() {
 
-const [msgReg, setmsgReg] = useState([{}])
-const [resReg, setresReg] = useState('')
+const [msgReg] = useState([{}])
+const [resReg] = useState('')
 
 
   const fetchData = async(msg) => {
