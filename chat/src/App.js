@@ -5,10 +5,6 @@ import { useState} from 'react';
 
 function App() {
 
-const [msgReg] = useState([{}])
-const [resReg] = useState('')
-
-
   const fetchData = async(msg) => {
     console.log("poda sunni")
     console.log(msg)
