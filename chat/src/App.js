@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-//import Axios from 'axios';
 import { useState, useEffect} from 'react';
 
 
@@ -9,57 +8,7 @@ function App() {
 const [msgReg, setmsgReg] = useState([{}])
 const [resReg, setresReg] = useState('')
 
-// useEffect(() => {
-//   fetch("/members").then(
-//     res => res.json()
-//   ).then(
-//       msgReg => {
-//         setmsgReg(msgReg)
-//         console.log(msgReg)
-//       }
-//   )
-// }, [])
 
-  /*const date = new Date();
-  const hours = date.getHours();
-  const seconds = date.getSeconds();
-  const day = date.getDate();
-  const month = date.getMonth();
-  const year = date.getFullYear();
-
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const [time,setTime] = useState(`${hours};${seconds}`);
-  const [dateTime, setDateTime] = useState(`${days[day]}, ${months[month]} ${year}`);
-
-  const checkStatus = (e) => {
-    let isActive = true;
-    if(dateTime === 'Thursday, May 20 2022'){
-      isActive = false;
-    }
-    const status = document.querySelector('.status');
-    if(isActive === true){
-      status.innerHTML = 'Active';
-      status.style.color = 'green';
-    }else{
-      status.innerHTML = 'Not Active';
-      status.style.color = 'red';
-    }
-  }*/
-
-  // useEffect(() =>{
-  //   Axios.get("http://localhost:3001/api/get").then((response)=> {
-  //     setresReg(response.data);
-  //   });
-  // },[]);
-
-  // const submit = () =>{
-  //   Axios.post("http://localhost:3001/api/get", {
-  //     msg: msgReg,
-  //   }).then(() =>{
-  //     alert("succesfull")
-  //   })
-  // }
   const fetchData = async(msg) => {
     console.log("poda sunni")
     console.log(msg)
