@@ -28,10 +28,7 @@ model.eval()
 bot_name = "Sam"
 print("Let's chat! (type 'quit' to exit)")
 def func(abc):
-    # sentence = "do you use credit cards?"
     sentence = abc
-    # if sentence == "quit":
-    #     break
 
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
