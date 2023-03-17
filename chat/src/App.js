@@ -1,38 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect,useRef} from 'react';
+
 
 function App() {
 
-  const fetchData = async(msg) => {
-    console.log("poda sunni")
-    console.log(msg)
-    const response = await fetch(`http://localhost:5000/${msg}`)
-    const data = await response.json();
-    console.log(data)
-    return data['message']
-  };
-
+const [msgReg, setmsgReg] = useState([{}])
+const [resReg, setresReg] = useState(null)
+const input = useRef();
+  
   const handleInput = () => {
     const botMessage = document.querySelector('#message1');
-    const userMessage = document.querySelector('#message2');
+    var userMessage = document.querySelector('#message2');
     const inpt = document.getElementById("input").value
-    
-    
-    
-    let badwords = ['fuck|bad|stupid|useless|bitch|cringe'];
-    let words = new RegExp(badwords);
-    if(words.test(document.querySelector('#input').value)){
-      botMessage.innerHTML = 'Typing...';
-      setTimeout(() => {
-        botMessage.innerHTML = resReg.map((val) =>{ 
-          return val.res;
-        });
-        document.querySelector('#input').value = " ";
-      }, 2000);
-    }
+    const fetchData = async(msg) => {
+      const response = await fetch(`http://localhost:5000/${msg}`)
+      const data = await response.json();
+      botMessage.innerHTML = data['message']
+    };
     userMessage.innerHTML = document.querySelector('#input').value;
-    console.log(fetchData(inpt))
-    botMessage.innerHTML = fetchData(inpt)
+    const datam = fetchData(inpt);
   }
   return (
     <div className="App"> 
